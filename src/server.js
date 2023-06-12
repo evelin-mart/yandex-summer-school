@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { crowler } = require('./crowler.js');
+const { crawler } = require('./crawler.js');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -9,11 +9,11 @@ const host = 'localhost';
 const port = 3000;
 const route = '/parse';
 
-const listener = (req, res) => {
+const listener = async (req, res) => {
     const domain = req.body.domainName;
+    const data = await crawler(domain);
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    const data = crowler(domain);
-    res.end(JSON.stringify(data));
+    res.send(JSON.stringify(data));
 };
 
 const server = app.listen(port, host, function () {

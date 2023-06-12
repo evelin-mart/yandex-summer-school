@@ -24,4 +24,4 @@
 
 Краулер должен собрать со всех страниц уникальные и действительные адреса страниц и сохранить их в массив.
 
-Ссылка для парсинга: POST http://localhost:3000/parse body: { domainName: string} returns: string[]
+Ссылка для парсинга: `POST http://localhost:3000/parse body: { domainName: string} returns: string[]`

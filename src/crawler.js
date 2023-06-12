@@ -2,7 +2,7 @@ const { fetcher } = require('./fetcher');
 
 const regexp = /<a[^>]*href=["']([^"']*)["']/gm;
 
-async function crowler(domain) {
+async function crawler(domain) {
     const stack = [`${domain}/`];
     const result = [];
 
@@ -12,17 +12,16 @@ async function crowler(domain) {
         if (response.status === 200) {
             result.push(resource);
             const page = await response.text();
-            const links = [...page.matchAll(regexp)];
+            const links = Array.from(page.matchAll(regexp)).map((match) => match[1]);
             if (links.length) {
                 links.forEach((link) => {
                     stack.push(link);
                 });
             }
-            console.log(page, links);
         }
     }
 
     return result;
 }
 
-module.exports = { crowler };
+module.exports = { crawler };
