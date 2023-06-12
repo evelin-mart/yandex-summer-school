@@ -5,15 +5,14 @@ const { crawler } = require('./crawler.js');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const host = 'localhost';
+const host = '127.0.0.1';
 const port = 3000;
 const route = '/parse';
 
 const listener = async (req, res) => {
     const domain = req.body.domainName;
     const data = await crawler(domain);
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.send(JSON.stringify(data));
+    res.send(data);
 };
 
 const server = app.listen(port, host, function () {
