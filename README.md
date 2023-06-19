@@ -103,3 +103,6 @@ import "module-name";
 -  Документация по плагинам ESLint: https://eslint.org/docs/developer-guide/working-with-plugins
 -  Документация по правилам ESLint: https://eslint.org/docs/developer-guide/working-with-rules
 
+![Снимок экрана 2023-06-19 150058](https://github.com/evelin-mart/yandex-summer-school/assets/95069824/e8e31417-6d06-447e-b2a3-0223110ab37b)
+![Снимок экрана 2023-06-19 150208](https://github.com/evelin-mart/yandex-summer-school/assets/95069824/b9d845f0-6879-4354-9639-07ee4d5b8f10)
+
